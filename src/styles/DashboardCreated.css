@@ -1,0 +1,101 @@
+.centerContent {
+    text-align: center;
+  }
+  
+  .checkmark-container {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .checkmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #28a745;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+  }
+  
+  .checkmark {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .sparkle {
+    position: absolute;
+    background-color: #28a745;
+    border-radius: 50%;
+    animation: sparkleAnimation 1.5s infinite ease-in-out;
+  }
+  
+  .sparkle:nth-child(1) {
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+  }
+  
+  .sparkle:nth-child(2) {
+    width: 6px;
+    height: 6px;
+    top: 20%;
+    left: 80%;
+    animation-delay: 0.3s;
+  }
+  
+  .sparkle:nth-child(3) {
+    width: 5px;
+    height: 5px;
+    top: 60%;
+    left: 90%;
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes sparkleAnimation {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+  
+  .heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  .text {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
