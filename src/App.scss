@@ -1,0 +1,148 @@
+
+$primary-color: #3498db;
+$success-color: #28a745;
+$dark-blue: #003f88;
+$faint-blue: #a3c9f1;
+
+.container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  flex-direction: column;
+
+  .centerContent {
+    text-align: center;
+
+    .spinner {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+
+      .spinnerDot {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: $dark-blue;
+        animation: fade 1.5s infinite ease-in-out;
+
+        &:nth-child(1) {
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          animation-delay: 0s;
+        }
+
+        &:nth-child(2) {
+          top: 15%;
+          left: 85%;
+          transform: translate(-50%, -50%);
+          animation-delay: 0.1s;
+        }
+
+        &:nth-child(3) {
+          top: 50%;
+          left: 100%;
+          transform: translate(-50%, -50%);
+          animation-delay: 0.2s;
+        }
+
+        &:nth-child(4) {
+          top: 85%;
+          left: 85%;
+          transform: translate(-50%, -50%);
+          animation-delay: 0.3s;
+        }
+
+        &:nth-child(5) {
+          top: 100%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          animation-delay: 0.4s;
+        }
+
+        &:nth-child(6) {
+          top: 85%;
+          left: 15%;
+          transform: translate(-50%, -50%);
+          animation-delay: 0.5s;
+        }
+
+        &:nth-child(7) {
+          top: 50%;
+          left: 0%;
+          transform: translate(-50%, -50%);
+          animation-delay: 0.6s;
+        }
+
+        &:nth-child(8) {
+          top: 15%;
+          left: 15%;
+          transform: translate(-50%, -50%);
+          animation-delay: 0.7s;
+        }
+      }
+    }
+
+    .checkmark-container {
+      position: relative;
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+
+      .checkmark-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: $success-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        box-shadow: 0 0 10px rgba($success-color, 0.5);
+
+        .checkmark {
+          font-size: 32px;
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .button {
+      background-color: $primary-color;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    background-color: $dark-blue;
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    background-color: $faint-blue;
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  100% {
+    background-color: $dark-blue;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
