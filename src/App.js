@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { TEXTS } from "./const"; // Import centralized text
-import "./App.scss"; // Import SCSS styles
+import CircularProgress from "@mui/material/CircularProgress";
+import "./App.scss";
+import { ReactComponent as CheckmarkIcon } from "./checkmark.svg";
 
 const App = () => {
   const [isCreating, setIsCreating] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsCreating(false), 5000); 
+    const timer = setTimeout(() => setIsCreating(false), 5000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -14,23 +15,17 @@ const App = () => {
     <div className="container">
       {isCreating ? (
         <div className="centerContent">
-          <div className="spinner">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div key={i} className="spinnerDot"></div>
-            ))}
-          </div>
-          <h2>{TEXTS.CREATING_HEADER}</h2>
-          <p>{TEXTS.CREATING_BODY}</p>
+          <CircularProgress size={60} thickness={5} />
+          <h2>Creating your dashboard!</h2>
+          <p>Hang tight! We're crafting your dashboard at lightning speed.</p>
         </div>
       ) : (
         <div className="centerContent">
           <div className="checkmark-container">
-            <div className="checkmark-circle">
-              <span className="checkmark">✔</span>
-            </div>
+            <CheckmarkIcon className="checkmark-icon" />
           </div>
-          <h2>{TEXTS.CREATED_HEADER}</h2>
-          <p>{TEXTS.CREATED_BODY}</p>
+          <h2>Dashboard created successfully!</h2>
+          <p>Dive in and explore your insights now.</p>
           <button className="button">Go to dashboard</button>
         </div>
       )}
