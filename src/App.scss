@@ -1,0 +1,51 @@
+
+$primary-color: #3498db;
+$success-color: #28a745;
+$dark-blue: #003f88;
+$faint-blue: #a3c9f1;
+
+.container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+  flex-direction: column;
+
+  .centerContent {
+    text-align: center;
+    
+    .button {
+      background-color: $primary-color;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    background-color: $dark-blue;
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    background-color: $faint-blue;
+    transform: scale(0.6);
+    opacity: 0.6;
+  }
+  100% {
+    background-color: $dark-blue;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
